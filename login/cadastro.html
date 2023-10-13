@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tela de cadastro</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="shortcut icon" href="img/LOGO-EasyMenu.png" type="image/x-icon">
+  </head>
+  <body>
+    <div class="login">
+    <!--FORMULARIO-->
+      <form name="form-login">
+        <!--LOGO-->
+        <div id="logo"><img src="img/LOGO-EasyMenu.png"></div>
+        <h1>CADASTRO</h1>
+        <p>insira algumas informações para fazer parte do nosso grupo.</p>
+        <label for="nomecomp">Nome</label>
+        <input
+          type="text"
+          id="ncompleto"
+          placeholder="Nome completo"
+          required
+        />
+
+        <label for="data">Data de nascimento</label>
+        <input type="date" id="data" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Email válido" required />
+
+        <label for="usuario">Username</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Nome de usuário opcional"
+          required
+        />
+
+        <label for="pw">senha</label>
+        <input type="password" id="pw" placeholder="senha de acesso" required />
+
+        <ul class="helper-text">
+          
+          <li class="length">deve conter pelo menos 8 caracteres.</li>
+          <li class="lowercase">pelo menos uma letra minúscula.</li>
+          <li class="uppercase">pelo menos uma letra maiúscula.</li>
+          <li class="special">pelo menos um número ou caractere especial.</li>
+        </ul>
+        <!--BOTAO-->
+        <input
+          id="rgstr_btn"
+          type="submit"
+          value="registrar"
+          onclick="store()"
+        /><br>
+        <div id="link">
+       <a href="login.html" >já tem uma conta?</a>
+</div>      
+</form>
+    </div>
+    
+      
+    <div>
+      
+    </div>
+   <script src=" login.js"></script>
+  </body>
+</html>

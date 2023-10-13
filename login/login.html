@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tela de login</title>
+   <link rel="stylesheet" href="login.css">
+   <link rel="shortcut icon" href="img/LOGO-EasyMenu.png" type="image/x-icon">
+  </head>
+  <body>
+    <div class="login">
+      <!--FORMULARIO-->
+      <form name="form-login">
+        <!--LOGO-->
+        <div id="logo"><img src="img/LOGO-EasyMenu.png"></div>
+        <h1>LOGIN</h1>
+        <p>acesse nossa plataforma</p>
+        <label for="userName">Usuario</label>
+        <input type="text" id="userName" placeholder="usuário" required />
+
+        <label for="userPw">senha</label>
+        <input type="password" id="userPw" placeholder="senha" required />
+
+        <div id="remember">
+          <input
+            type="checkbox"
+            value="lsRememberMe"
+            id="rememberMe"
+            style="display: inline-block"
+          />
+          <label>lembre-me</label>
+        </div>
+      <!--BOTAO-->
+        <input id="login_btn" type="submit" value="acessar" onclick="check()" />
+      </form>
+    </div>
+    <script src="login.js"></script>
+  </body>
+</html>

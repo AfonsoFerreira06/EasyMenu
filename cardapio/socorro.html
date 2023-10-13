@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="socorro.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <div class="box">
+
+
+        <!-- TOPO -->
+
+        <header class="cabecalho">
+            <div class="logo">
+                <img src="IMGs/LOGO-EasyMenu.png" alt="logo">
+            </div>
+            <div class="barrinha">
+                <div class="degrade"></div>
+            </div>
+
+            <nav class="nav">
+                <a href="#">Inicio</a>
+                <a href="#">Cardápio</a>
+                <a href="#">Redes Sociais</a>
+                <a href="#" id="abrir-modal"> Carrinho </a>
+            </nav>
+        </header>
+
+
+        <!-- CORPO -->
+
+
+        <main class="content">
+
+            <div class="holder"></div>
+
+
+    </div>
+
+
+    <!-- CARDÁPIO -->
+
+
+    <div class="cardapio">
+        <h1>Cardápio</h1>
+        <div class="cadastro">
+
+            <div class="container">
+
+                <header>
+
+                    <div class="filterEntries">
+                        <div class="entries">
+                            Show <select name="" id="table_size">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select> entries
+                        </div>
+
+                        <div class="filter">
+                            <label for="search">Search:</label>
+                            <input type="search" name="" id="search" placeholder="search">
+                        </div>
+                    </div>
+
+                    <div class="addMemberBtn">
+                        <button>Adicionar</button>
+                    </div>
+
+                </header>
+
+
+                <table>
+
+                    <thead>
+                        <tr class="heading">
+                            <th>Prod ID</th>
+                            <th>Imagem</th>
+                            <th>Produto</th>
+                            <th>Preço</th>
+                            <th>Descrição</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody class="userInfo">
+
+                    </tbody>
+
+                </table>
+
+
+                <footer>
+                    <span class="showEntries">Showing 1 to 10 of 50 entries</span>
+                    <div class="pagination">
+                        <!-- <button>Prev</button>
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>Next</button> -->
+                    </div>
+                </footer>
+            </div>
+
+
+            <!--Popup Form-->
+
+            <div class="dark_bg">
+
+                <div class="popup">
+                    <header class="popupheader">
+                        <h2 class="modalTitle">Cadastre seu produto</h2>
+                        <button class="closeBtn">&times;</button>
+                    </header>
+
+                    <div class="body">
+                        <form action="#" id="myForm">
+                            <div class="imgholder">
+                                <label for="uploadimg" class="upload">
+                                    <input type="file" name="" id="uploadimg" class="picture">
+                                    <i class="fa-solid fa-plus"></i>
+                                </label>
+                                <img src="IMGs/mais.png" alt="" width="10" height="10" class="img">
+                            </div>
+
+                            <div class="inputFieldContainer">
+
+                                <div class="nameField">
+                                    <div class="form_control">
+                                        <label for="fName">Produto:</label>
+                                        <input type="text" name="" id="fName" required>
+                                    </div>
+
+                                    <div class="form_control">
+                                        <label for="lName">Sabor:</label>
+                                        <input type="text" name="" id="lName" required>
+                                    </div>
+                                </div>
+
+                                <div class="ageCityField">
+                                    <div class="form_control">
+                                        <label for="age">Preço:</label>
+                                        <input type="number" name="" id="age" required>
+                                    </div>
+
+                                    <div class="form_control">
+                                        <label for="city">Descrição:</label>
+                                        <input type="text" name="" id="city" required>
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+
+                    <footer class="popupFooter">
+                        <button form="myForm" class="submitBtn">Enviar</button>
+                    </footer>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    </main>
+
+
+    <!-- RODAPÉ  -->
+
+
+    <footer class="rodape">Obrigado pela atenção</footer>
+    </div>
+    <script src="socorro.js"></script>
+</body>
+
+</html>
