@@ -103,7 +103,7 @@
 .holder {
   width: 100vw;
   height: 30vh;
-  background-color: var(--secbg);
+  background-image: url(IMGs/holder.jpeg);
   box-shadow: -7px 24px 15px var(--secbg);
 }
 
