@@ -1,3 +1,6 @@
+
+// VARIAVEIS
+
 var newMemberAddBtn = document.querySelector('.addMemberBtn'),
 darkBg = document.querySelector('.dark_bg'),
 popupForm = document.querySelector('.popup'),
@@ -35,6 +38,7 @@ var maxIndex = 0
 
 showInfo()
 
+// ADIÇÃO DE PRODUTOS (PopUp)
 
 newMemberAddBtn.addEventListener('click', ()=> {
     isEdit = false
@@ -65,7 +69,7 @@ uploadimg.onchange = function(){
     }
 
     else{
-        alert("This file is too large!")
+        alert("É potencia demais pra mim") //CASO O ARQUIVO SEJA MUITO GRANDE
     }
 
 }
@@ -80,7 +84,7 @@ function preLoadCalculations(){
     }
 }
 
-
+// BARRA DE PÁGINAS
 
 function displayIndexBtn(){
     preLoadCalculations()
@@ -89,13 +93,13 @@ function displayIndexBtn(){
 
     pagination.innerHTML = ""
 
-    pagination.innerHTML = '<button onclick="prev()" class="prev">Previous</button>'
+    pagination.innerHTML = '<button onclick="prev()" class="prev">Voltar</button>'
 
     for(let i=1; i<=maxIndex; i++){
         pagination.innerHTML += '<button onclick= "paginationBtn('+i+')" index="'+i+'">'+i+'</button>'
     }
 
-    pagination.innerHTML += '<button onclick="next()" class="next">Next</button>'
+    pagination.innerHTML += '<button onclick="next()" class="next">Próximo</button>'
 
     highlightIndexBtn()
 }
@@ -115,7 +119,7 @@ function highlightIndexBtn(){
     }
 
 
-    entries.textContent = `Showing ${startIndex} to ${endIndex} of ${arrayLength} entries`
+    entries.textContent = `Mostrando ${startIndex} até ${endIndex} de ${arrayLength} produtos`
 
     var paginationBtns = document.querySelectorAll('.pagination button')
     paginationBtns.forEach(btn => {
@@ -129,8 +133,7 @@ function highlightIndexBtn(){
     showInfo()
 }
 
-
-
+// BOTÕES DE AÇÃO
 
 function showInfo(){
     document.querySelectorAll(".employeeDetails").forEach(info => info.remove())
@@ -179,6 +182,8 @@ function showInfo(){
 showInfo()
 
 
+//  BOTÃO LEITURA 
+
 function readInfo(pic, fname, lname, Age, City){
     imgInput.src = pic
     fName.value = fname
@@ -199,14 +204,16 @@ function readInfo(pic, fname, lname, Age, City){
     imgHolder.style.pointerEvents = "none"
 }
 
+// BOTÃO DE EDIÇÃO
+
 function editInfo(id, pic, fname, lname, Age, City){
     isEdit = true
     editId = id
 
-    // Find the index of the item to edit in the original data based on id
+   
     const originalIndex = originalData.findIndex(item => item.id === id)
 
-    // Update the original data
+   
     originalData[originalIndex] = {
         id: id,
         picture: pic,
@@ -236,12 +243,14 @@ function editInfo(id, pic, fname, lname, Age, City){
     imgHolder.style.pointerEvents = "auto"
 }
 
+// BOTÃO DE LIXEIRA
+
 function deleteInfo(index){
     if(confirm("Quer deletar mermo manxo?")){
         originalData.splice(index, 1);
         localStorage.setItem("userProfile", JSON.stringify(originalData));
         
-        // Update getData after deleting the record
+       
         getData = [...originalData];
 
         preLoadCalculations()
@@ -279,6 +288,7 @@ function deleteInfo(index){
 
 form.addEventListener('submit', (e)=> {
     e.preventDefault()
+
 
     const information = {
         id: Date.now(),
@@ -325,6 +335,7 @@ form.addEventListener('submit', (e)=> {
     }
 })
 
+// FUNÇÃO PAGINAÇÃO
 
 function next(){
     var prevBtn = document.querySelector('.prev')
@@ -393,7 +404,7 @@ tabSize.addEventListener('change', ()=>{
     displayIndexBtn()
 })
 
-
+// BARRA DE PESQUISA
 
 filterData.addEventListener("input", ()=> {
     const searchTerm = filterData.value.toLowerCase().trim()
@@ -412,7 +423,6 @@ filterData.addEventListener("input", ()=> {
             )
         })
 
-        // Update the current data with filtered data
         getData = filteredData
     }
 
